@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block judul %}Lihat Data{% endblock %}</title>
+</head>
+<body>
+        {% block konten %}
+        <div class="wrapper">
+            <p>Your Collected Data</p>
+            <hr>
+            <div class="tabel">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+    
+                        </tr>
+                        {% for column in hasil %}
+                        <tr>
+                            <td>{{column.0}}</td>
+                            <td>{{column.1}}</td>
+                            <td>{{column.2}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+            Let's input <a href="/">the data!</a>
+        </div>
+        {% endblock %}
+</body>
+</html>

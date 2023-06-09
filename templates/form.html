@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block judul %}Input Data{% endblock %}</title>
+</head>
+<body>
+        {% block konten %}
+        <div class="wrapper">
+            <p>Input Your Data Here!</p>
+            <hr>
+            <form action="/input_data" method="post">
+                <label for="nim">NIM</label>
+                <input type="text" name="nim" placeholder="NIM">
+                <label for="nama">Nama Mahasiswa</label>
+                <input type="text" name="nama" placeholder="Nama Mahasiswa">
+                <label for="alamat">Alamat</label>
+                <input type="text" name="alamat" placeholder="Alamat">
+                <button type="submit">Submit Data</button>
+            </form>
+            <hr>
+            Let's see <a href="/lihat_data">the data!</a>
+        </div>
+        {% endblock %}
+</body>
+</html>
